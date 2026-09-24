@@ -1,32 +1,23 @@
-# Fibra — descrição visual
+# Fibra — montagem v2
 
-Duração: 104,6 s. Formatos: 16:9 e 9:16. O áudio de referência orienta os cortes; não é incluído nos arquivos públicos.
+104,6 segundos, 30 fps, composições próprias em 16:9 e 9:16. Remotion + GSAP.
 
-## Conceito
+Sem títulos, capítulos escritos ou frases repetindo a narração. Uma mensagem laranja conduz a ação. Paleta azul cobalto, branco quente, laranja e ciano.
 
-Uma mensagem parece desaparecer na nuvem. A câmera visual acompanha seu caminho até uma infraestrutura física no fundo dos oceanos. A abertura usa um satélite como hipótese visual; a virada faz a informação descer. O filme passa da visão global ao detalhe da fibra, mostra instalação, danos e reparo, e encerra na materialidade da internet.
+| Intervalo | Ação |
+|---|---|
+| 0–3,7 s | Celular inclina, mensagem sai da tela e dispara. |
+| 3,7–10,33 s | Terra e satélite; mensagem percorre uma órbita. |
+| 10,33–13,67 s | Hipótese orbital é interrompida; mensagem mergulha. |
+| 13,67–20,5 s | Pulso cruza cidade, costa e fundo do oceano. |
+| 20,5–33,5 s | Rede se constrói sobre continentes; câmera percorre conexões. |
+| 33,5–42,7 s | Vídeo, voz, transação e dados entram no fluxo óptico. |
+| 42,7–50 s | Cabo aparece, camadas se abrem, câmera entra na fibra. |
+| 50–60,3 s | Estruturas desaparecem acima; mergulho revela cabo no leito marinho. |
+| 60,3–69,3 s | Navio avança, bobinas giram e cabo é lançado; veículo submarino entra. |
+| 69,3–75,67 s | Tremor, âncora e rede de pesca atingem a estrutura. |
+| 75,67–84,4 s | Fluxo usa desvio; peça de reparo fecha sobre a ruptura. |
+| 84,4–97,7 s | Nuvem sobe; conexões físicas aparecem sob a água. |
+| 97,7–104,6 s | Celular recebe a mensagem, conectado ao cabo. |
 
-Direção: documentário editorial com azul profundo, papel claro, luz ciano e pequenos detalhes âmbar. Texto curto, imagens recortadas, linhas de informação e movimentos que explicam o processo.
-
-| Tempo | Cena | Imagem e movimento |
-|---|---|---|
-| 00:00–00:13,67 | Para onde vai a mensagem? | Ícone de mensagem ganha escala. Satélite entra em perspectiva; perde destaque na virada. |
-| 00:13,67–00:20,50 | A mensagem desce | Linha luminosa cruza a costa e mergulha em um corte lateral do oceano. |
-| 00:20,50–00:33,50 | Conexões globais | Nós e curvas aparecem em cascata; pulsos percorrem uma rede esquemática. |
-| 00:33,50–00:42,70 | O que passa pela rede | Fundo claro; ícones de vídeo, chamada, transação e dados surgem em sequência. |
-| 00:42,70–00:50,00 | Dados viram luz | Cabo em PNG transparente; aproximação lenta e pulsos sobre as fibras. |
-| 00:50,00–01:00,30 | Infraestrutura física | Corte do oceano revela um cabo junto ao relevo submarino. |
-| 01:00,30–01:09,30 | Instalação e manutenção | Navio recortado cruza a superfície enquanto a linha do cabo se desenha abaixo. |
-| 01:09,30–01:15,67 | Riscos | Ícones de terremoto, âncora e pesca entram nos momentos correspondentes. |
-| 01:15,67–01:24,40 | Desvio e reparo | Rota interrompida em coral; rota alternativa em ciano; ferramenta marca o reparo. |
-| 01:24,40–01:37,70 | A nuvem tem raízes | Ícone de nuvem perde opacidade e revela uma rede física de conexões. |
-| 01:37,70–01:44,60 | Extremamente real | Cabo em destaque, aproximação contida e fechamento tipográfico. |
-
-## Recursos criados
-
-1. Cabo submarino em corte, com materiais em camadas e fibras luminosas.
-2. Navio de instalação e manutenção de cabos.
-3. Satélite de comunicações.
-4. Ícones vetoriais originais: mensagem, vídeo, telefone, banco, servidor, âncora, terremoto, pesca, nuvem e reparo.
-
-Todos os recursos de primeiro plano têm fundo transparente. Os fundos e diagramas são construídos no Remotion. As animações de SVG usam GSAP por meio de `@remotion/gsap`.
+Os contornos continentais derivam de Natural Earth, domínio público. As rotas são ilustrativas. Imagens de cabo e satélite possuem transparência; objetos funcionais são desenhados em SVG.
