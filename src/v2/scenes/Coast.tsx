@@ -6,7 +6,7 @@ export const Coast:React.FC=()=>{
  const scope=useGsapTimeline<SVGSVGElement>(({timeline:t,selector:s})=>{
  t.from(s('[data-building]'),{y:-80,opacity:0,stagger:.035,duration:.5,ease:'power3.out'},.05)
  .fromTo(s('[data-cable]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:4.6,ease:'none'},.1)
- .set(s('[data-dot]'),{x:x1,y:y1})
+ .set(s('[data-dot]'),{x:x1,y:y1},0)
  .to(s('[data-dot]'),{x:x2,y:y1,duration:1.2,ease:'none'},.2)
  .to(s('[data-dot]'),{x:x2,y:y2,duration:1,ease:'none'},1.4)
  .to(s('[data-dot]'),{x:x3,y:y3,duration:1.3,ease:'none'},2.4)
