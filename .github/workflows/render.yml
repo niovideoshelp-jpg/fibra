@@ -1,4 +1,4 @@
-name: Exportar videos Remotion v3
+name: Exportar videos Remotion v3 final
 on:
   push:
     branches: [main]
