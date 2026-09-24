@@ -27,3 +27,17 @@ Create a premium photorealistic 3D icon cutout of a single communications satell
 ## Limites de representação
 
 As imagens são ilustrações geradas, não fotografias documentais de equipamentos identificados. A seção do cabo é ilustrativa; camadas e espessuras variam conforme o projeto. O gráfico de conexões não representa a localização de cabos reais.
+
+
+## Versão 4 — imagens originais
+
+Geradas com ImageGen para este filme, sem texto embutido. Transparência verificada por leitura do canal alpha, sem remoção artificial de fundo.
+
+| Arquivo | Conteúdo | Dimensão | Alpha |
+|---|---|---|---|
+| public/images/v4-cutaway.png | Cabo com camadas expostas, materiais em macro | 1536 × 1024 | 0–254 |
+| public/images/v4-seabed.png | Bloco geológico em corte, vale e estratos | 1536 × 1024 | 0–254 |
+| public/images/v4-rov.png | Robô de manutenção com câmeras, luzes e manipuladores | 1254 × 1254 | 0–255 |
+| public/images/v4-joint.png | Junta aberta para explicação do reparo | 1536 × 1024 | 0–254 |
+
+A junta usa duas máscaras SVG sobre a mesma imagem para movimentar a carcaça superior. O original permanece intacto. Os cortes são ilustrativos; detalhes reais variam por fabricante e tipo de cabo.
