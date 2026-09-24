@@ -9,10 +9,11 @@ export const RestoreVertical:React.FC=()=>{
  .to(s('[data-network]'),{scale:.35,y:-30,duration:1.3,ease:'power2.inOut',svgOrigin:'500 220'},3.5)
  .from(s('[data-detail]'),{opacity:0,y:120,duration:1.1,ease:'power3.out'},4)
  .to(s('[data-shell]'),{y:174,duration:1.2,ease:'power2.inOut'},5.8)
+ .to(s('[data-break]'),{opacity:0,duration:.3},7)
  .to(s('[data-restored]'),{opacity:1,duration:.5},7);
  });
  return <Board ref={scope} bg={P.white}><SurveyGrid width={1000} height={1778}/>
- <g data-network><path d="M500 220V730M500 940V1510" stroke={P.night} strokeWidth="26"/><path data-bypass d="M500 350C780 350 790 560 790 810S780 1380 500 1380" pathLength={100} strokeDasharray="100" stroke={P.blue} strokeWidth="12" fill="none"/><path data-flow d="M500 350C780 350 790 560 790 810S780 1380 500 1380" pathLength={100} strokeDasharray="4 46" stroke={P.orange} strokeWidth="7" fill="none"/><path d="m460 790 80 90m-80 0 80-90" stroke={P.orange} strokeWidth="9"/><path data-restored d="M500 720V950" stroke={P.cyan} strokeWidth="26" opacity="0"/>{[350,1380].map(y=><circle key={y} cx="500" cy={y} r="20" fill={P.orange}/>)}</g>
+ <g data-network><path d="M500 220V730M500 940V1510" stroke={P.night} strokeWidth="26"/><path data-bypass d="M500 350C780 350 790 560 790 810S780 1380 500 1380" pathLength={100} strokeDasharray="100" stroke={P.blue} strokeWidth="12" fill="none"/><path data-flow d="M500 350C780 350 790 560 790 810S780 1380 500 1380" pathLength={100} strokeDasharray="4 46" stroke={P.orange} strokeWidth="7" fill="none"/><path data-break d="m460 790 80 90m-80 0 80-90" stroke={P.orange} strokeWidth="9"/><path data-restored d="M500 720V950" stroke={P.cyan} strokeWidth="26" opacity="0"/>{[350,1380].map(y=><circle key={y} cx="500" cy={y} r="20" fill={P.orange}/>)}</g>
  <g data-detail><g transform="translate(500 1110) rotate(90) scale(.62) translate(-768 -512)"><RepairAsset/></g></g>
  </Board>;
 };

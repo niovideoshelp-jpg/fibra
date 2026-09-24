@@ -1,5 +1,5 @@
 name: Exportar videos Remotion v4
-# Horizontal editorial e vertical nativo com ilustrações originais.
+# Horizontal e vertical nativo: finalização visual do reparo revisada.
 on:
   push:
     branches: [main]
