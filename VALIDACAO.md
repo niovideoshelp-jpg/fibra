@@ -1,17 +1,20 @@
-# Validação da versão 2
+# Validação da versão 3
 
-Código verificado: c8cbcac7e3017acde16c015e54e59ce6b3dff625.
+Código final: 91c39204230bfbd7753c20b9bbc462f5f2a4ba4d.
 
 - TypeScript aprovado no GitHub.
-- 38 quadros renderizados e revisados: 13 planos e seis estados adicionais em cada formato.
-- Corrigidos contraste da estrutura do navio, ligação do cabo ao celular e transformações das camadas da fibra.
-- Conferida a progressão da abertura da fibra em quadros sequenciais do MP4 exportado.
-- Exportações H.264 concluídas no GitHub, em 1920 × 1080 e 1080 × 1920.
-- Ambos os arquivos finais têm 3138 frames, 30 fps e duração de 104,600 segundos.
-- Narração original adicionada localmente em AAC, preservando todos os frames; áudio com 104,568 segundos. O áudio não foi publicado no repositório.
-- A primeira versão permanece preservada na branch archive/versao-1.
+- 44 quadros por rodada de revisão, cobrindo os dois formatos, conexões, enquadramentos e passagens entre planos.
+- Conferidos satélite e antena, popa do navio e origem do cabo, convergência dos feixes, estação costeira, mapa e celular.
+- Câmera cartográfica corrigida por transformação explícita por frame. Mapas completos com margens nos dois formatos.
+- Mastro do navio com folga no horizontal.
+- Pulso costeiro permanece no fim do trajeto, sem retornar ao ponto inicial.
+- Paleta sem fundo azul: papel quente, carvão, oliva, cobre e verde pálido.
+- Conferidas sequências de quadros extraídas dos MP4s para satélite, navio e transição costa/mapa.
+- Arquivos finais H.264, 1920 × 1080 e 1080 × 1920, 30 fps, 3138 frames e 104,600 segundos.
+- Narração AAC de 104,568 segundos adicionada localmente, sem publicar o áudio original no repositório.
+- A renderização visual é feita no GitHub; os arquivos com narração são entregues na conversa.
 
-[Revisão visual](https://github.com/niovideoshelp-jpg/fibra/actions/runs/36068069388).
-[Exportações visuais](https://github.com/niovideoshelp-jpg/fibra/actions/runs/36068410455).
+[Revisão final](https://github.com/niovideoshelp-jpg/fibra/actions/runs/36071179290).
+[Exportação final](https://github.com/niovideoshelp-jpg/fibra/actions/runs/36071189212).
 
-Os artefatos de revisão ficam disponíveis por 14 dias; os vídeos visuais, por 30 dias. Código e recursos permanecem no repositório e permitem novas renderizações.
+Artefatos de revisão disponíveis por 14 dias; exportações visuais por 30 dias. Código e recursos permanecem no repositório.
