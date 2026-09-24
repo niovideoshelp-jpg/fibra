@@ -1,6 +1,6 @@
 # Fibra — a internet sob os oceanos
 
-Motion graphic de 104,6 segundos, criado em **Remotion + GSAP**, com imagens em PNG transparente, ícones vetoriais e 13 planos sincronizadas à narração de referência.
+Motion graphic de 104,6 segundos, criado em **Remotion + GSAP**, com imagens em PNG transparente, ícones vetoriais e 13 planos sincronizados à narração de referência.
 
 ## Composições
 
@@ -31,7 +31,7 @@ npm run render:vertical -- --props=props.private.json
 
 ## Verificação
 
-`npm run check` verifica o TypeScript. O workflow de verificação tem apenas leitura do repositório e gera 38 quadros de revisão, cobrindo os 13 planos e estados adicionais de movimento nos dois formatos. Não publica áudio, não faz commits e não renderiza um vídeo final.
+`npm run check` verifica o TypeScript. O workflow de verificação tem apenas leitura do repositório e gera 44 quadros de revisão, cobrindo os 13 planos e estados adicionais de movimento nos dois formatos. Não publica áudio, não faz commits e não renderiza um vídeo final.
 
 ## Recursos
 
@@ -39,7 +39,9 @@ npm run render:vertical -- --props=props.private.json
 - `src/v2/kit.tsx`: desenhos vetoriais originais sem fundo.
 - `src/v2/scenes/`: 13 planos com GSAP.
 - `STORYBOARD.md`: descrição da sequência visual.
-- `DIRECAO-V2.md`: escolhas da nova direção, sem títulos ou textos de apoio.
+- `DIRECAO-V3.md`: direção documental, paleta sem azul, geometria das conexões e continuidade entre planos.
 - `archive/versao-1`: preserva a primeira montagem.
 
 Ilustrações do cabo e do navio são representações visuais. As conexões são esquemáticas, sem escala ou coordenadas de rotas reais.
+
+A versão atual usa satélite vetorial com antena e rotas no mesmo sistema de coordenadas. O arquivo PNG anterior é preservado como recurso. A exportação integral dos visuais ocorre no workflow `Exportar videos Remotion v3`.
