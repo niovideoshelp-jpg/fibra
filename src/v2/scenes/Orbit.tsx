@@ -5,7 +5,7 @@ import {Board,useBoard,P} from '../kit';
 import {landPath} from '../land';
 export const Orbit:React.FC=()=>{
  const {W,H,p}=useBoard();const frame=useCurrentFrame();
- const cx=W*.5,cy=H*.85,r=p?W*.64:H*.62;
+ const cx=W*.5,cy=H*.92,r=p?W*.64:H*.56;
  const sx=W*.61,sy=H*.25, ax=W*.27,ay=cy-r*.57,bx=W*.79,by=cy-r*.49;
  const qx=W*.25,qy=H*.21,rx=W*.86,ry=H*.30;
  const t=Math.max(0,Math.min(1,(frame-42)/105));const half=t<.5;const u=half?t*2:(t-.5)*2;
@@ -30,7 +30,7 @@ export const Orbit:React.FC=()=>{
  <g data-rig>
  <path data-route d={'M'+ax+' '+ay+'Q'+qx+' '+qy+' '+sx+' '+sy+'Q'+rx+' '+ry+' '+bx+' '+by} pathLength={100} strokeDasharray="100" fill="none" stroke={P.orange} strokeWidth="4"/>
  {[ [ax,ay],[bx,by] ].map(([x,y],i)=><g key={i}><circle cx={x} cy={y} r="10" fill={P.orange}/><circle cx={x} cy={y} r="22" fill="none" stroke={P.orange} strokeWidth="2" opacity=".5"/></g>)}
- <g transform={'translate('+sx+' '+sy+') scale('+(p?.82:1.02)+')'}>
+ <g transform={'translate('+sx+' '+sy+') scale('+(p?.90:.85)+')'}>
  <g transform="rotate(-17)">
  <path d="M-80-80H80V-10H-80Z" fill="#B4A06A" stroke={P.night} strokeWidth="4"/>
  <path d="M-63-72H64V-20H-63Z" fill="#CABB8B"/><path d="M-55-64H54M-55-49H54M-55-34H54" stroke="#8C794E" strokeWidth="3"/>

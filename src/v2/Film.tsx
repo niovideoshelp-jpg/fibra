@@ -26,7 +26,7 @@ const SceneReveal:React.FC<{index:number;children:React.ReactNode}>=({index,chil
  const frame=useCurrentFrame();
  const progress=interpolate(frame,[0,18],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(.22,.61,.36,1)});
  const dissolve=[1,4,6,9,12].includes(index);
- return <AbsoluteFill style={{opacity:index===0?1:dissolve?progress:1,clipPath:index===0||dissolve?undefined:'inset('+(100-progress*100)+'% 0 0 0)',transform:index===0?'none':'translateY('+((1-progress)*10)+'px)'}}>{children}</AbsoluteFill>;
+ return <AbsoluteFill style={{opacity:index===0?1:dissolve?progress:1,maskImage:index===0||dissolve||progress===1?undefined:'linear-gradient(to top,black '+Math.max(0,progress*115-15)+'%,transparent '+(progress*115)+'%)',transform:index===0?'none':'translateY('+((1-progress)*10)+'px)'}}>{children}</AbsoluteFill>;
 };
 export const Film:React.FC<FilmProps>=({audioSrc})=>{
  const [handle]=useState(()=>delayRender('Carregando recortes transparentes'));
