@@ -17,7 +17,7 @@ export const Connections:React.FC=()=>{
  <rect x="85" y={cy-245} width="830" height="490" rx="8" fill={P.sea}/><g clipPath={'url(#native-map-'+j+')'}><g transform={'translate('+(500-cx*2.3)+' '+(cy-sy*2.3)+') scale(2.3)'}>
  <path d={landPath} fill={P.white} opacity=".88"/>
  {worldEdges.filter((_,i)=>j===0?i<7:i>=7&&i<13).map(([a,b],i)=>{const A=worldNodes[a],B=worldNodes[b];const d='M'+A[0]+' '+A[1]+'Q'+(A[0]+B[0])/2+' '+((A[1]+B[1])/2-45)+' '+B[0]+' '+B[1];return <g key={i}><path data-route d={d} pathLength={100} strokeDasharray="100" stroke={P.orange} strokeWidth="2" fill="none"/><path data-flow d={d} pathLength={100} strokeDasharray="3 97" stroke={P.white} strokeWidth="3" fill="none"/>{[A,B].map(([x,y],k)=><circle key={k} cx={x} cy={y} r="4" fill={P.night}/>)}</g>;})}
- </g></g><text x="85" y={cy-278} fill={P.ink} fontFamily="Arial,sans-serif" fontSize="25" letterSpacing="3">{title}</text>
+ </g></g><text x="85" y={cy-278} fill={P.ink} fontFamily="Arial,sans-serif" fontSize="31" letterSpacing="3">{title}</text>
  </g>)}
  <path data-spine d="M500 745V995" pathLength={100} strokeDasharray="100" fill="none" stroke={P.orange} strokeWidth="5"/><circle cx="500" cy="745" r="10" fill={P.orange}/><circle cx="500" cy="995" r="10" fill={P.orange}/>
  </Board>;
