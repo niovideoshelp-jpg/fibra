@@ -3,9 +3,9 @@ import {useGsapTimeline} from '@remotion/gsap';
 import {Board,useBoard,P,Phone,Message} from '../kit';
 import {landPath} from '../land';
 export const Arrival:React.FC=()=>{
- const {W,H,p}=useBoard();const cy=H*.45;
+ const {W,H,p}=useBoard();const cy=H*.48;
  const scope=useGsapTimeline<SVGSVGElement>(({timeline:t,selector:s})=>{
- t.from(s('[data-device]'),{y:100,rotation:17,scale:1.5,opacity:0,duration:.7,ease:'power3.out'},0)
+ t.from(s('[data-device]'),{y:100,rotation:5,scale:1.12,opacity:0,duration:.7,ease:'power3.out'},0)
  .from(s('[data-message]'),{x:-W*.7,y:100,scale:.1,opacity:0,duration:.65,ease:'power2.out'},.2)
  .to(s('[data-message]'),{scale:.02,opacity:0,y:15,duration:.35,ease:'power3.in'},.95)
  .to(s('[data-phone-bubble]'),{opacity:0,scale:.1,duration:.25},1.2)
@@ -13,10 +13,10 @@ export const Arrival:React.FC=()=>{
  .fromTo(s('[data-link]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:1.2},.7)
  .to(s('[data-cable-light]'),{strokeDashoffset:-300,duration:5,ease:'none'},1.2)
  .from(s('[data-global]'),{opacity:0,scale:.7,duration:1.3,svgOrigin:W/2+' '+H/2},2.2)
- .to(s('[data-device]'),{scale:p?.96:.86,rotation:-7,y:p?20:-10,duration:2.2,ease:'power3.inOut'},2.5)
+ .to(s('[data-device]'),{scale:p?1.1:1,rotation:-2,y:0,duration:2.2,ease:'power3.inOut'},2.5)
  .from(s('[data-echo]'),{scale:.1,opacity:0,stagger:.15,duration:1.1,svgOrigin:W/2+' '+cy},1.5)
  .to(s('[data-echo]'),{scale:1.8,opacity:0,duration:1.6,svgOrigin:W/2+' '+cy},2.5)
- .to(s('[data-global]'),{x:-35,rotation:3,duration:3.7,ease:'none',svgOrigin:W/2+' '+H/2},3);
+ .to(s('[data-global]'),{x:-12,rotation:0,duration:3.7,ease:'none',svgOrigin:W/2+' '+H/2},3);
  });
  const d='M0 270V'+(H*.8-cy)+'Q0 '+(H*.94-cy)+' '+(-W*.28)+' '+(H*.9-cy)+'T'+(-W*.7)+' '+(H*.77-cy);
  return <Board ref={scope} bg={P.white}>

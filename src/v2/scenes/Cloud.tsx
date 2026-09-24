@@ -4,19 +4,19 @@ import {Board,useBoard,P,CloudShape,Message,Seabed} from '../kit';
 import {landPath} from '../land';
 import {worldNodes,worldEdges} from './World';
 export const Cloud:React.FC=()=>{
- const {W,H,p}=useBoard();const cx=W/2,cy=H*.34;const sc=p?1.45:1.38;
+ const {W,H,p}=useBoard();const cx=W/2,cy=H*.34;const sc=p?.90:1.28;
  const scope=useGsapTimeline<SVGSVGElement>(({timeline:t,selector:s})=>{
- t.from(s('[data-cloud]'),{scale:.05,y:H*.2,duration:.7,ease:'back.out(1.4)'},0)
- .to(s('[data-cloud]'),{y:-30,rotation:4,duration:1.2,yoyo:true,repeat:1,ease:'sine.inOut'},.8)
+ t.from(s('[data-cloud]'),{scale:.05,y:H*.2,duration:.7,ease:'power3.out'},0)
+ .to(s('[data-cloud]'),{y:-30,rotation:0,duration:1.2,yoyo:true,repeat:1,ease:'sine.inOut'},.8)
  .from(s('[data-msg]'),{x:-W*.7,y:100,scale:0,opacity:0,duration:.75,ease:'power3.out'},.9)
  .to(s('[data-msg]'),{x:0,y:0,scale:.05,opacity:0,duration:.55,ease:'power3.in'},1.9)
  .fromTo(s('[data-tethers]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:1.7,stagger:.12},2.3)
- .to(s('[data-cloud-top]'),{y:-H*.36,scale:.75,duration:1.5,ease:'power3.inOut',svgOrigin:cx+' '+cy},4.9)
+ .to(s('[data-cloud-top]'),{y:-H*.19,scale:.82,duration:1.5,ease:'power3.inOut',svgOrigin:cx+' '+cy},4.9)
  .from(s('[data-water]'),{y:H*.7,duration:1.5,ease:'power3.inOut'},4.9)
- .from(s('[data-world]'),{opacity:0,y:H*.23,scale:.6,duration:1.2,ease:'power3.out',svgOrigin:W/2+' '+H*.62},6)
+ .from(s('[data-world]'),{opacity:0,y:H*.12,scale:.94,duration:1.2,ease:'power3.out',svgOrigin:W/2+' '+H*.60},6)
  .fromTo(s('[data-cable]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:1.3,stagger:.1},6.6)
  .to(s('[data-cablelight]'),{strokeDashoffset:-360,duration:6,ease:'none'},7)
- .to(s('[data-world]'),{rotation:8,scale:1.17,y:-H*.025,duration:4.2,svgOrigin:W/2+' '+H*.62,ease:'power1.inOut'},9);
+ .to(s('[data-world]'),{rotation:0,scale:1.07,y:-H*.015,duration:4.2,svgOrigin:W/2+' '+H*.62,ease:'power1.inOut'},9);
  });
  return <Board ref={scope} bg={P.blue}>
  <g data-cloud-top><g transform={'translate('+cx+' '+cy+')'}><g data-cloud transform={p?'scale(1.12)':'scale(1.4)'}><CloudShape/></g><g data-msg transform="scale(.5)"><Message/></g></g>

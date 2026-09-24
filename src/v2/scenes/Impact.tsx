@@ -2,7 +2,7 @@ import React from 'react';
 import {useGsapTimeline} from '@remotion/gsap';
 import {Board,useBoard,P,Anchor,Seabed} from '../kit';
 export const Impact:React.FC=()=>{
- const {W,H}=useBoard();const cy=H*.69;
+ const {W,H}=useBoard();const cy=H*.58;
  const scope=useGsapTimeline<SVGSVGElement>(({timeline:t,selector:s})=>{
  t.fromTo(s('[data-crack]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:.65},.2)
  .to(s('[data-left]'),{x:-35,y:12,rotation:-2,duration:.15},.72)
@@ -10,11 +10,11 @@ export const Impact:React.FC=()=>{
  .from(s('[data-spark]'),{scale:0,opacity:0,duration:.12,svgOrigin:W/2+' '+cy},.72)
  .to(s('[data-spark]'),{opacity:0,scale:1.5,duration:.4,svgOrigin:W/2+' '+cy},.9)
  .to(s('[data-camera]'),{keyframes:[{x:-14,y:7,duration:.06},{x:14,y:-7,duration:.06},{x:-8,y:4,duration:.06},{x:0,y:0,duration:.06}]},.72)
- .from(s('[data-anchor]'),{y:-H,rotation:-22,duration:.65,ease:'power3.in'},1.8)
+ .from(s('[data-anchor]'),{y:-H,rotation:-8,duration:.65,ease:'power3.in'},1.8)
  .to(s('[data-camera]'),{keyframes:[{x:-15,duration:.06},{x:15,duration:.06},{x:0,duration:.06}]},2.44)
  .to(s('[data-anchor]'),{y:110,rotation:13,opacity:0,duration:.6},3.15)
- .from(s('[data-net]'),{y:-H*.5,rotation:-20,opacity:0,duration:.6,ease:'power3.in'},3.9)
- .to(s('[data-net]'),{x:W*.18,y:110,rotation:18,duration:1.7,ease:'power2.inOut'},4.5);
+ .from(s('[data-net]'),{y:-H*.5,rotation:-6,opacity:0,duration:.6,ease:'power3.in'},3.9)
+ .to(s('[data-net]'),{x:W*.18,y:110,rotation:7,duration:1.7,ease:'power2.inOut'},4.5);
  });
  return <Board ref={scope} bg={P.sea}><g data-camera><Seabed W={W} H={H}/>
  <g data-left><path d={'M-100 '+cy+'H'+(W/2-12)} stroke={P.night} strokeWidth="38"/><path d={'M-100 '+cy+'H'+(W/2-12)} stroke={P.cyan} strokeWidth="8"/></g>

@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import {AbsoluteFill,Sequence,continueRender,delayRender,staticFile,cancelRender} from 'remotion';
+import {AbsoluteFill,Sequence,useCurrentFrame,interpolate,Easing,continueRender,delayRender,staticFile,cancelRender} from 'remotion';
 import {Audio} from '@remotion/media';
 import {Launch} from './scenes/Launch';
 import {Orbit} from './scenes/Orbit';
@@ -22,6 +22,12 @@ const shots=[
  {from:2079,duration:191,C:Impact},{from:2270,duration:262,C:Repair},{from:2532,duration:399,C:Cloud},
  {from:2931,duration:207,C:Arrival},
 ];
+const SceneReveal:React.FC<{index:number;children:React.ReactNode}>=({index,children})=>{
+ const frame=useCurrentFrame();
+ const progress=interpolate(frame,[0,18],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp',easing:Easing.bezier(.22,.61,.36,1)});
+ const dissolve=[1,4,6,9,12].includes(index);
+ return <AbsoluteFill style={{opacity:index===0?1:dissolve?progress:1,clipPath:index===0||dissolve?undefined:'inset('+(100-progress*100)+'% 0 0 0)',transform:index===0?'none':'translateY('+((1-progress)*10)+'px)'}}>{children}</AbsoluteFill>;
+};
 export const Film:React.FC<FilmProps>=({audioSrc})=>{
  const [handle]=useState(()=>delayRender('Carregando recortes transparentes'));
  useEffect(()=>{
@@ -30,7 +36,7 @@ export const Film:React.FC<FilmProps>=({audioSrc})=>{
   return()=>{cancelled=true;};
  },[handle]);
  return <AbsoluteFill>
- {shots.map(({from,duration,C})=><Sequence from={from} durationInFrames={duration} key={from}><C/></Sequence>)}
+ {shots.map(({from,duration,C},index)=><Sequence from={from} durationInFrames={duration+(index<shots.length-1?18:0)} key={from}><SceneReveal index={index}><C/></SceneReveal></Sequence>)}
  {audioSrc?<Audio src={audioSrc}/>:null}
  </AbsoluteFill>;
 };

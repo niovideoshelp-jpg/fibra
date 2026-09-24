@@ -2,19 +2,19 @@ import React from 'react';
 import {useGsapTimeline} from '@remotion/gsap';
 import {Board,useBoard,P} from '../kit';
 export const Repair:React.FC=()=>{
- const {W,H,p}=useBoard();const cy=H*.66,x1=W*.12,x2=W*.88;
+ const {W,H,p}=useBoard();const cy=H*.62,x1=W*.12,x2=W*.88;
  const alt='M'+x1+' '+cy+'C'+W*.22+' '+cy+' '+W*.2+' '+H*.3+' '+W*.38+' '+H*.3+'H'+W*.65+'C'+W*.84+' '+H*.3+' '+W*.78+' '+cy+' '+x2+' '+cy;
  const scope=useGsapTimeline<SVGSVGElement>(({timeline:t,selector:s})=>{
- t.fromTo(s('[data-camera]'),{scale:1.7,y:-H*.11},{scale:1,y:0,rotation:-5,duration:1.4,svgOrigin:W/2+' '+cy,ease:'power3.out'},0)
+ t.fromTo(s('[data-camera]'),{scale:1.13,y:-H*.02},{scale:1,y:0,rotation:0,duration:1.4,svgOrigin:W/2+' '+cy,ease:'power3.out'},0)
  .fromTo(s('[data-alt]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:1.45,ease:'power2.inOut'},.8)
  .to(s('[data-packet]'),{strokeDashoffset:-450,duration:6.7,ease:'none'},1.6)
- .from(s('[data-node]'),{scale:0,stagger:.1,duration:.5,transformOrigin:'center',ease:'back.out(2)'},.5)
+ .from(s('[data-node]'),{scale:0,stagger:.1,duration:.5,transformOrigin:'center',ease:'power3.out'},.5)
  .from(s('[data-clamp-top]'),{y:-130,opacity:0,duration:.65,ease:'power3.out'},4.2)
  .from(s('[data-clamp-bottom]'),{y:130,opacity:0,duration:.65,ease:'power3.out'},4.3)
  .to(s('[data-bolt]'),{rotation:270,duration:.65,stagger:.08,transformOrigin:'center'},5.1)
  .to(s('[data-healed]'),{opacity:1,duration:.25},6)
  .to(s('[data-restored-packet]'),{strokeDashoffset:-180,duration:2.3,ease:'none'},6.1)
- .to(s('[data-camera]'),{scale:1.07,rotation:0,duration:2.6,ease:'power2.inOut',svgOrigin:W/2+' '+H/2},6);
+ .to(s('[data-camera]'),{scale:1.035,rotation:0,duration:2.6,ease:'power2.inOut',svgOrigin:W/2+' '+H/2},6);
  });
  return <Board ref={scope} bg={P.white}><g data-camera>
  <path d={alt} stroke={P.night} strokeWidth="28" fill="none" opacity=".13" transform="translate(12 22)"/>

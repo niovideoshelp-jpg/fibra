@@ -5,7 +5,7 @@ export const Reversal:React.FC=()=>{
  const {W,H}=useBoard();
  const scope=useGsapTimeline<SVGSVGElement>(({timeline:t,selector:s})=>{
  t.fromTo(s('[data-up]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:.55},0)
- .from(s('[data-cross]'),{scale:0,rotation:-40,duration:.3,ease:'back.out(2)',svgOrigin:W/2+' '+H*.25},.45)
+ .from(s('[data-cross]'),{scale:0,rotation:-40,duration:.3,ease:'power3.out',svgOrigin:W/2+' '+H*.25},.45)
  .to(s('[data-up]'),{opacity:.15,duration:.2},.5)
  .to(s('[data-message]'),{y:-65,rotation:-8,duration:.35,ease:'power2.out'},.1)
  .to(s('[data-message]'),{y:H*.8,rotation:18,scale:.18,duration:1.8,ease:'power3.in'},1.1)

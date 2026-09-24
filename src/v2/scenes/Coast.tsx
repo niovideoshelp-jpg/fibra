@@ -11,7 +11,7 @@ export const Coast:React.FC=()=>{
  .to(s('[data-dot]'),{x:x2,y:y2,duration:1,ease:'none'},1.4)
  .to(s('[data-dot]'),{x:x3,y:y3,duration:1.3,ease:'none'},2.4)
  .to(s('[data-dot]'),{x:x4,y:y4,duration:1.6,ease:'none'},3.7)
- .to(s('[data-camera]'),{y:-H*.16,x:-W*.12,scale:1.22,svgOrigin:W*.5+' '+H*.55,duration:3.6,ease:'power2.inOut'},2.6)
+ .to(s('[data-camera]'),{y:-H*.08,x:-W*.035,scale:1.1,svgOrigin:W*.5+' '+H*.55,duration:3.6,ease:'power2.inOut'},2.6)
  .to(s('[data-waterlines]'),{x:140,duration:6.83,ease:'none'},0);
  });
  const d='M'+x1+' '+y1+'H'+x2+'V'+y2+'L'+x3+' '+y3+'L'+x4+' '+y4;
@@ -21,6 +21,7 @@ export const Coast:React.FC=()=>{
  <Seabed W={W} H={H}/>
  <g data-waterlines>{Array.from({length:10},(_,i)=><path key={i} d={'M'+(W*.52+i*60)+' '+(H*.42+i*10)+'h180'} stroke={P.white} opacity=".3" strokeWidth="3"/>)}</g>
  {Array.from({length:9},(_,i)=>{const bx=W*.05+(i%3)*85,by=H*.22+Math.floor(i/3)*58;const ht=70+(i*43)%85;return <g key={i} data-building><path d={'M'+bx+' '+by+'v-'+ht+'l35-18 44 15v'+ht+'l-44 18Z'} fill={i%2?P.muted:P.blue}/><path d={'M'+bx+' '+(by-ht)+'l35 17v'+ht+'l-35-17Z'} fill={P.night} opacity=".3"/>{[0,1,2].map(j=><path key={j} d={'M'+(bx+46)+' '+(by-ht+31+j*22)+'h19'} stroke={P.white} strokeWidth="5" opacity=".7"/>)}</g>;})}
+ <g transform={'translate('+x1+' '+y1+')'}><rect x="-36" y="-56" width="72" height="56" fill={P.white} stroke={P.night} strokeWidth="4"/><path d="M-25-36H25M-25-23H25" stroke={P.muted} strokeWidth="6"/><circle r="10" fill={P.orange}/></g>
  <path d={d} stroke={P.night} strokeWidth="20" fill="none" strokeLinejoin="round"/>
  <path data-cable d={d} pathLength={100} strokeDasharray="100" stroke={P.orange} strokeWidth="9" fill="none" strokeLinejoin="round"/>
  <g data-dot><circle r="56" fill="url(#beam)"/><circle r="12" fill={P.white}/></g>
