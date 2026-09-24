@@ -4,7 +4,7 @@ import {useGsapTimeline} from '@remotion/gsap';
 import {Board,useBoard,P,Ship,Seabed} from '../kit';
 export const Laying:React.FC=()=>{
  const {W,H,p}=useBoard();const frame=useCurrentFrame();
- const sc=p?1.02:1.14,bx=W*.5,by=H*.39-100*sc;
+ const sc=p?1.02:.98,bx=W*.5,by=H*.39-100*sc;
  const progress=Math.min(1,frame/270),dx=W*.10*(progress-.5),dy=Math.sin(progress*Math.PI*4)*3;
  const stern=bx+dx-285*sc;
  const cable='M'+stern+' '+(by+dy+42*sc)+'C'+(stern-60)+' '+H*.61+' '+W*.35+' '+H*.77+' '+W*.68+' '+H*.76+'S'+W+' '+H*.75+' '+(W+100)+' '+H*.77;
