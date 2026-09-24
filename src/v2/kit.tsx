@@ -30,18 +30,18 @@ export const Reel:React.FC=()=> <g data-reel><circle r="54" fill={P.night}/><cir
 export const Ship:React.FC=()=> <g>
  <path d="M-313 61H316L260 151H-221Q-280 144-313 61Z" fill={P.night}/><path d="M-292 91H298L283 116H-270Z" fill={P.orange}/>
  <path d="M-316 55H312L333 38H-323Z" fill={P.white}/><path d="M-325 42H330" stroke={P.night} strokeWidth="9"/>
- <path d="M106 38V-81H242L253 38Z" fill={P.white}/><path d="M84-87H253V-66H84Z" fill={P.white}/><path d="M138-106H221V-87H138Z" fill={P.white}/>
+ <path d="M106 38V-81H242L253 38Z" fill="#DCE6FF" stroke={P.night} strokeWidth="4"/><path d="M84-87H253V-66H84Z" fill="#DCE6FF" stroke={P.night} strokeWidth="4"/><path d="M138-106H221V-87H138Z" fill="#DCE6FF" stroke={P.night} strokeWidth="4"/>
  <path d="M115-62H237V-31H115Z" fill={P.blue}/>{[130,165,200,230].map(x=><path key={x} d={'M'+x+'-61V-32'} stroke={P.night} strokeWidth="5"/>)}
  <path d="M181-106V-205M145-165H224M163-188H208" stroke={P.night} strokeWidth="6"/><circle cx="197" cy="-188" r="10" fill={P.white}/><path d="M209-193V-216" stroke={P.orange} strokeWidth="6"/>
- <path d="M-287 39V-109H-192V-92H-265V39" fill={P.white}/><path d="M-240-94-202 25M-272-94-289 25" stroke={P.orange} strokeWidth="10"/>
+ <path d="M-287 39V-109H-192V-92H-265V39" fill="#DCE6FF" stroke={P.night} strokeWidth="4"/><path d="M-240-94-202 25M-272-94-289 25" stroke={P.orange} strokeWidth="10"/>
  <g transform="translate(-120 -13)"><Reel/></g><g transform="translate(7 -13)"><Reel/></g>
  {[-205,-150,-95,-40,15,70,125,180,235].map(x=><circle key={x} cx={x} cy="77" r="5" fill={P.white}/>)}
  <path d="M-220 26H65V37H-220Z" fill={P.muted}/><path d="M-230 14H72M-230-2H72" stroke={P.white} strokeWidth="4"/>
  </g>;
 export const CableFace:React.FC=()=> <g>
- <circle data-jacket r="232" fill={P.night} stroke="#566787" strokeWidth="10"/>
+ <g data-jacket><circle r="232" fill={P.night} stroke="#566787" strokeWidth="10"/></g>
  <g data-armor><circle r="210" fill="#415272"/>{Array.from({length:38},(_,i)=><circle key={i} cx={193*Math.cos(i*Math.PI/19)} cy={193*Math.sin(i*Math.PI/19)} r="13" fill="url(#steel)" stroke={P.night} strokeWidth="2"/>)}</g>
- <circle data-copper r="169" fill="url(#copper)"/><circle data-liner r="146" fill={P.white}/><circle r="131" fill={P.night}/>
+ <g data-copper><circle r="169" fill="url(#copper)"/></g><g data-liner><circle r="146" fill={P.white}/></g><circle r="131" fill={P.night}/>
  <g data-fiber-group>{Array.from({length:19},(_,i)=>{const ring=i===0?0:i<7?1:2;const j=i===0?0:i<7?i-1:i-7;const n=ring===1?6:12;const a=j*Math.PI*2/n;return <g key={i} data-fiber><circle cx={Math.cos(a)*ring*43} cy={Math.sin(a)*ring*43} r="17" fill="#174BA0" stroke={P.cyan} strokeWidth="4"/><circle cx={Math.cos(a)*ring*43-4} cy={Math.sin(a)*ring*43-4} r="6" fill={P.white}/></g>;})}</g>
  </g>;
 export const DataCard:React.FC<{kind:number}> =({kind})=><g>

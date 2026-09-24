@@ -18,12 +18,12 @@ export const Arrival:React.FC=()=>{
  .to(s('[data-echo]'),{scale:1.8,opacity:0,duration:1.6,svgOrigin:W/2+' '+cy},2.5)
  .to(s('[data-global]'),{x:-35,rotation:3,duration:3.7,ease:'none',svgOrigin:W/2+' '+H/2},3);
  });
- const d='M'+W/2+' '+(cy+270)+'V'+H*.8+'Q'+W/2+' '+H*.94+' '+W*.22+' '+H*.9+'T-'+W*.2+' '+H*.77;
+ const d='M0 270V'+(H*.8-cy)+'Q0 '+(H*.94-cy)+' '+(-W*.28)+' '+(H*.9-cy)+'T'+(-W*.7)+' '+(H*.77-cy);
  return <Board ref={scope} bg={P.white}>
  <g data-global><path d={landPath} transform={'translate('+(W/2-750)+' '+(H/2-375)+') scale(1.5)'} fill={P.blue} opacity=".08"/></g>
  {[250,340,450].map(r=><circle data-echo key={r} cx={W/2} cy={cy} r={r} stroke={P.orange} strokeWidth="3" fill="none" opacity=".4"/>)}
- <path data-link d={d} pathLength={100} strokeDasharray="100" stroke={P.night} strokeWidth="28" fill="none"/>
- <path data-cable-light d={d} pathLength={100} strokeDasharray="4 96" stroke={P.orange} strokeWidth="9" fill="none"/>
- <g transform={'translate('+W/2+' '+cy+')'}><g data-device><Phone/></g><g data-message><Message/></g></g>
+ 
+ <g transform={'translate('+W/2+' '+cy+')'}><g data-device><path data-link d={d} pathLength={100} strokeDasharray="100" stroke={P.night} strokeWidth="28" fill="none"/>
+ <path data-cable-light d={d} pathLength={100} strokeDasharray="4 96" stroke={P.orange} strokeWidth="9" fill="none"/><Phone/></g><g data-message><Message/></g></g>
  </Board>;
 };

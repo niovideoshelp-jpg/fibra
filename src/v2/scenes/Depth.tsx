@@ -9,7 +9,7 @@ export const Depth:React.FC=()=>{
  .from(s('[data-sea]'),{y:H*.7,duration:1,ease:'power3.out'},2.5)
  .to(s('[data-lumens]'),{strokeDashoffset:-600,duration:8,ease:'none'},2.6)
  .fromTo(s('[data-cable-trace]'),{strokeDashoffset:100},{strokeDashoffset:0,duration:2.1},3)
- .to(s('[data-underwater]'),{x:-W*.12,y:-H*.07,scale:1.22,duration:6.1,ease:'none',svgOrigin:W/2+' '+H*.75},3.8)
+ .to(s('[data-underwater]'),{x:-W*.18,y:-H*.18,scale:1.55,duration:6.1,ease:'none',svgOrigin:W/2+' '+H*.75},3.8)
  .to(s('[data-dust]'),{y:-70,x:22,stagger:.02,duration:7,ease:'none'},3);
  });
  return <Board ref={scope} bg={P.night}>

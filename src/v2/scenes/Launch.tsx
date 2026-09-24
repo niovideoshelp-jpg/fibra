@@ -7,6 +7,7 @@ export const Launch:React.FC=()=>{
  t.from(s('[data-device]'),{y:H*.45,rotation:-25,scale:.65,opacity:0,duration:.7,ease:'power4.out'},0)
  .to(s('[data-device]'),{rotation:8,scale:1.05,duration:1.2,ease:'power2.inOut'},.7)
  .to(s('[data-phone-bubble]'),{scale:.78,duration:.2,yoyo:true,repeat:1,svgOrigin:'0 0'},1.35)
+ .to(s('[data-phone-bubble]'),{opacity:0,duration:.18},1.7)
  .from(s('[data-flying]'),{scale:0,opacity:0,duration:.3,ease:'back.out(2)'},1.7)
  .to(s('[data-device]'),{x:-W*.4,rotation:-14,scale:.65,duration:.7,ease:'power3.in'},2)
  .to(s('[data-flying]'),{x:W*.34,y:-H*.08,rotation:14,scale:1.5,duration:.65,ease:'power2.inOut'},2.05)
