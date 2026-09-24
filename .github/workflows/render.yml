@@ -1,5 +1,5 @@
-name: Exportar videos Remotion v3 final
-# Margens e continuidade do pulso costeiro revisadas.
+name: Exportar videos Remotion v4
+# Horizontal editorial e vertical nativo com ilustrações originais.
 on:
   push:
     branches: [main]
