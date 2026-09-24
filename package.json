@@ -1,0 +1,30 @@
+{
+  "name": "fibra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Documentário animado sobre cabos submarinos — Remotion + GSAP",
+  "scripts": {
+    "studio": "remotion studio src/index.ts --no-open",
+    "check": "tsc --noEmit",
+    "still": "remotion still src/index.ts FibraHorizontal out/frame.png --frame=1350",
+    "render:horizontal": "remotion render src/index.ts FibraHorizontal out/fibra-16x9.mp4",
+    "render:vertical": "remotion render src/index.ts FibraVertical out/fibra-9x16.mp4"
+  },
+  "dependencies": {
+    "remotion": "4.0.528",
+    "@remotion/cli": "4.0.528",
+    "@remotion/gsap": "4.0.528",
+    "@remotion/media": "4.0.528",
+    "@remotion/transitions": "4.0.528",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "gsap": "3.13.0",
+    "@remotion/bundler": "4.0.528",
+    "@remotion/renderer": "4.0.528"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2"
+  }
+}
