@@ -16,6 +16,6 @@ export const Seabed:React.FC=()=>{
  return <div ref={scope}><Stage chapter="06 / INFRAESTRUTURA"><Ocean width={w} height={h} surface={h*.52}/>
  <Headline eyebrow="PARECE ABSTRATO. É FÍSICO.">No fundo<br/>do oceano.</Headline>
  <svg width={w} height={h} style={{position:'absolute'}}><path data-floorline d={d} fill="none" stroke={C.cyan} strokeWidth={8}/><path data-floorpulse d={d} pathLength={100} fill="none" stroke={C.paper} strokeWidth={11} strokeDasharray="4 96"/></svg>
- <div data-bottom style={{position:'absolute',left:80,bottom:p?210:135,fontSize:p?43:34,color:C.cyan}}>Tecnologia real.<br/>Em um ambiente extremo.</div>
+ <div data-bottom style={{position:'absolute',left:80,bottom:p?380:240,fontSize:p?43:34,color:C.cyan}}>Tecnologia real.<br/>Em um ambiente extremo.</div>
  </Stage></div>;
 };

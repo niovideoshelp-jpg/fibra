@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill,Audio} from 'remotion';
+import {AbsoluteFill} from 'remotion';
+import {Audio} from '@remotion/media';
 import {TransitionSeries} from '@remotion/transitions';
 import {Intro} from './scenes/Intro';
 import {Descent} from './scenes/Descent';
