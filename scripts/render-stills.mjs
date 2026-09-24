@@ -3,7 +3,7 @@ import {selectComposition,renderStill} from '@remotion/renderer';
 import {mkdir,writeFile} from 'node:fs/promises';
 const serveUrl=await bundle({entryPoint:'src/index.ts'});
 await mkdir('out/review',{recursive:true});
-const frames=[210,480,820,1220,1370,1710,1920,2230,2420,2830,3070];
+const frames=[60,210,375,520,810,1220,1385,1720,1940,2205,2450,2820,3070];
 const results=[];
 for(const id of ['FibraHorizontal','FibraVertical']){
  const composition=await selectComposition({serveUrl,id,inputProps:{audioSrc:''}});
