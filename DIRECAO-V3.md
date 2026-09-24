@@ -13,3 +13,5 @@ Correções:
 - Abertura e encerramento com celular centralizado; reparo e ruptura aproximados do centro útil do quadro.
 
 Remotion permanece responsável pela composição e renderização. Animações SVG usam GSAP; geometria de conexão dependente do frame usa as mesmas coordenadas dos objetos.
+
+Revisão final: o mapa usa transformação de câmera explícita por frame para preservar o centro e as margens. O formato vertical contém um detalhe do Atlântico conectado ao mapa geral. Feixes convergem dentro do núcleo da fibra; a nuvem se dissolve para revelar a rede, sem linhas soltas. As revelações verticais têm borda suave.
