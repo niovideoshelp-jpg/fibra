@@ -1,0 +1,38 @@
+name: Exportar videos Remotion
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/render.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: remotion-export
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - composition: FibraHorizontal
+            format: 16x9
+          - composition: FibraVertical
+            format: 9x16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - run: npm run check
+      - name: Renderizar imagem em movimento com Remotion
+        run: npx remotion render src/index.ts ${{ matrix.composition }} out/fibra-${{ matrix.format }}-visual.mp4 --codec=h264 --crf=18 --concurrency=2
+      - name: Salvar exportacao visual
+        uses: actions/upload-artifact@v4
+        with:
+          name: fibra-${{ matrix.format }}-visual
+          path: out/fibra-${{ matrix.format }}-visual.mp4
+          retention-days: 30
