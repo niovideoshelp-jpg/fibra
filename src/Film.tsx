@@ -1,2 +1,2 @@
-export {Film} from './v2/Film';
-export type {FilmProps} from './v2/Film';
+export {HorizontalFilm as Film} from './v4/HorizontalFilm';
+export type {FilmProps} from './v4/HorizontalFilm';
