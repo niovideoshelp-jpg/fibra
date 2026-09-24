@@ -1,47 +1,47 @@
 # Fibra — a internet sob os oceanos
 
-Motion graphic de 104,6 segundos, criado em **Remotion + GSAP**, com imagens em PNG transparente, ícones vetoriais e 13 planos sincronizados à narração de referência.
+Mini documentário em Remotion + GSAP, sincronizado à narração original de 104,6 segundos.
 
-## Composições
+## Duas montagens
 
-| Composição | Formato | Resolução | Frames |
-|---|---|---|---|
-| FibraHorizontal | 16:9 | 1920 × 1080 | 3138 a 30 fps |
-| FibraVertical | 9:16 | 1080 × 1920 | 3138 a 30 fps |
+| Composição | Linguagem | Saída |
+|---|---|---|
+| FibraHorizontal | 13 planos, macro de materiais e infografia lateral | 1920 × 1080, 30 fps |
+| FibraVertical | 12 planos nativos, narrativa pelo eixo vertical | 1080 × 1920, 30 fps |
 
-As cenas têm layouts próprios por formato. A integração `@remotion/gsap` controla as timelines por frame; não há animações dependentes do relógio do navegador.
+O vertical é implementado em **PortraitFilm**, com cenas próprias em **src/v4/portrait**. Não é recorte ou redimensionamento da montagem horizontal. Os formatos compartilham materiais, desenhos básicos, paleta, áudio e dados cartográficos.
 
-## Abrir no ambiente de edição
+## Direção
+
+Quatro imagens originais com transparência — cabo em corte, bloco geológico, ROV e junta de reparo — se combinam com seções vetoriais, máscaras animadas, pulsos, luzes e textura leve. Os poucos rótulos identificam partes ou regiões; não repetem a narração.
+
+- [Direção v4](DIRECAO-V4.md)
+- [Roteiro visual](STORYBOARD.md)
+- [Recursos e transparência](ASSETS.md)
+- [Validação](VALIDACAO.md)
+
+## Editar e renderizar
 
 ```sh
 npm install
 npm run studio
+npm run check
+npm run render:horizontal
+npm run render:vertical
 ```
+
+As timelines SVG são sincronizadas por frame com @remotion/gsap. Câmeras e geometria dependentes do frame usam Remotion. O workflow de revisão gera 52 quadros e o workflow de exportação renderiza os MP4s no GitHub.
 
 ## Narração
 
-O MP3 original fica fora do repositório público. Por padrão, a composição abre como **prévia visual sem áudio**. A propriedade `audioSrc` aceita uma URL acessível no ambiente de renderização ou um arquivo disponibilizado em `public/audio/` (pasta ignorada pelo Git).
+O áudio original permanece fora deste repositório público. Por padrão, as composições renderizam apenas os visuais. A propriedade audioSrc aceita a origem autorizada do áudio; props.private.json e public/audio são privados e ignorados pelo Git.
 
-Para usar o áudio em um ambiente autorizado, crie um arquivo privado `props.private.json` com a propriedade `audioSrc` apontando para a origem do áudio. Não adicione URLs privadas com credenciais ao repositório.
+## Arquivos e histórico
 
-```sh
-npm run render:horizontal -- --props=props.private.json
-npm run render:vertical -- --props=props.private.json
-```
+- src/v4/HorizontalFilm.tsx: montagem horizontal.
+- src/v4/PortraitFilm.tsx: montagem vertical.
+- src/v4/shared.tsx: imagens, materiais e elementos compartilhados.
+- public/images/v4-*.png: ilustrações originais com alpha.
+- archive/versao-3: montagem anterior preservada.
 
-## Verificação
-
-`npm run check` verifica o TypeScript. O workflow de verificação tem apenas leitura do repositório e gera 44 quadros de revisão, cobrindo os 13 planos e estados adicionais de movimento nos dois formatos. Não publica áudio, não faz commits e não renderiza um vídeo final.
-
-## Recursos
-
-- `public/images/`: cabo, navio e satélite, gerados com ImageGen e canal alpha.
-- `src/v2/kit.tsx`: desenhos vetoriais originais sem fundo.
-- `src/v2/scenes/`: 13 planos com GSAP.
-- `STORYBOARD.md`: descrição da sequência visual.
-- `DIRECAO-V3.md`: direção documental, paleta sem azul, geometria das conexões e continuidade entre planos.
-- `archive/versao-1`: preserva a primeira montagem.
-
-Ilustrações do cabo e do navio são representações visuais. As conexões são esquemáticas, sem escala ou coordenadas de rotas reais.
-
-A versão atual usa satélite vetorial com antena e rotas no mesmo sistema de coordenadas. O arquivo PNG anterior é preservado como recurso. A exportação integral dos visuais ocorre no workflow `Exportar videos Remotion v3`.
+As imagens são ilustrativas e as rotas são esquemáticas; não são projetos de engenharia nem rotas reais identificadas. Contornos continentais: Natural Earth, domínio público.
